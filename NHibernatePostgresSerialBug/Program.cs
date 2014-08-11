@@ -12,7 +12,7 @@ public abstract class EntityBase
 
 public class TestEntity : EntityBase
 {
-    public override int Id { get; set; }
+    public override int Id { get; set; } // comment this line and it works
     public virtual string SomeField { get; set; }
 }
 
@@ -21,12 +21,6 @@ public class AutomappingConfiguration : DefaultAutomappingConfiguration
     public override bool ShouldMap(Type type)
     {
         return !type.IsAbstract && type.IsSubclassOf(typeof(EntityBase));
-    }
-
-    public override bool ShouldMap(FluentNHibernate.Member member)
-    {
-        if (member.IsProperty && !member.CanWrite) return false;
-        return base.ShouldMap(member);
     }
 }
 
