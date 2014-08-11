@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
+  <session-factory name="NHibernate.Test">
+    <property name="connection.driver_class">NHibernate.Driver.NpgsqlDriver</property>
+    <property name="connection.connection_string">
+      Server   = 127.0.0.1;
+      Port     = 5432;
+      Database = postgres;
+      User Id  = postgres;
+      Password = postgres;
+    </property>
+    <property name="dialect">NHibernate.Dialect.PostgreSQL82Dialect</property>
+  </session-factory>
+</hibernate-configuration>
